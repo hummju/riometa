@@ -1,0 +1,125 @@
+{% import "_includes/forms" as forms %}
+
+
+<input
+    type="hidden"
+    name="siteId"
+    id="{{ siteId }}"
+    value="{{ siteId }}"
+>
+
+<h2>Meta</h2>
+
+{{ forms.textareaField({
+  label: "Description",
+  instructions: "Short description of the website. 165 characters long.",
+  name: "meta_description",
+  id: "meta_description",
+  value: fields.meta_description,
+}) }}
+
+
+{{ forms.textField({
+  label: "Keywords",
+  instructions: "Meta Keywords. Comma seperated. eg.: 'KEWORD, KEWORD, … ''",
+  name: "meta_keywords",
+  id: "meta_keywords",
+  value: fields.meta_keywords,
+}) }}
+
+
+<hr>
+<h2>Open Graph</h2>
+
+{{ forms.textField({
+  label: "Type",
+  instructions: "eg.: 'website'",
+  name: "og_type",
+  id: "og_type",
+  value: fields.og_type,
+}) }}
+
+
+{{ forms.textField({
+  label: "Title",
+  instructions: "",
+  name: "og_title",
+  id: "og_title",
+  value: fields.og_title,
+}) }}
+
+
+{{ forms.textField({
+  label: "Url",
+  instructions: "",
+  name: "og_url",
+  id: "og_url",
+  value: fields.og_url,
+}) }}
+
+
+{{ forms.textField({
+  label: "Image",
+  instructions: "",
+  name: "og_image",
+  id: "og_image",
+  value: fields.og_image,
+}) }}
+
+
+{{ forms.textField({
+  label: "Description",
+  instructions: "",
+  name: "og_description",
+  id: "og_description",
+  value: fields.og_description,
+}) }}
+
+
+{{ forms.textField({
+  label: "Locale",
+  instructions: "",
+  name: "og_locale",
+  id: "og_locale",
+  value: fields.og_locale,
+}) }}
+
+
+<hr>
+<h2>Geo</h2>
+<p>Geo-Tag generator: <a href="https://www.geo-tag.de/generator/de.html">geo-tag.de</a></p>
+
+{{ forms.textField({
+  label: "Region",
+  instructions: "eg.: 'CH-BS' for Basel",
+  name: "geo_region",
+  id: "geo_region",
+  value: fields.geo_region,
+}) }}
+
+
+{{ forms.textField({
+  label: "Placename",
+  instructions: "eg.: 'Basel'",
+  name: "geo_placename",
+  id: "geo_placename",
+  value: fields.geo_placename,
+}) }}
+
+
+{{ forms.textField({
+  label: "Latitude",
+  instructions: "eg.: '47.5' for Basel",
+  name: "geo_latitude",
+  id: "geo_latitude",
+  value: fields.geo_latitude,
+}) }}
+
+
+{{ forms.textField({
+  label: "Longitude",
+  instructions: "eg.: '7.6' for Basel",
+  name: "geo_longitude",
+  id: "geo_longitude",
+  value: fields.geo_longitude,
+}) }}

@@ -1,0 +1,48 @@
+{% import "_includes/forms" as forms %}
+
+{% set baseUrl = "riometa/" %}
+{% set params = [] %}
+
+
+{% set showSites = true %}
+
+
+
+{% if showSites %}
+    <div id="sites-btn" class="btn menubtn" data-icon="world">{{ currentSite.name }}</div>
+
+    <div class="menu">
+        {% set siteGroups = craft.app.sites.getAllGroups() %}
+        {% for group in siteGroups %}
+            {% set groupSiteIds = group.getSiteIds() %}
+            {% if groupSiteIds %}
+                {% if siteGroups|length > 1 %}<h6>{{ group.name|t('site') }}</h6>{% endif %}
+                <ul class="padded">
+                    {% for siteId in groupSiteIds %}
+                        {% set site = craft.app.sites.getSiteById(siteId) %}
+                        {% set status = craft.app.sites.getSiteById(siteId)['enabled'] ? 'enabled' : 'disabled' %}
+
+                        <li>
+                            {% if siteId == currentSite.id %}
+                                <a class="sel">
+                                    <div class="status {{ status }}"></div>{{ site.name|t('site') }}
+                                </a>
+                            {% else %}
+                                {% set url = url(baseUrl~site.handle, params) %}
+                                <a href="{{ url }}">
+                                {% if status == "enabled" %}
+                                    <div class="status {{ status }}"></div>{{ site.name|t('site') }}
+                                {% else %}
+                                    <div style="color: #b9bfc6;">
+                                        <div class="status {{ status }}"></div>{{ site.name|t('site') }}
+                                    </div>
+                                {% endif %}
+                              </a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}

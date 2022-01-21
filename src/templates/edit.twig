@@ -1,0 +1,17 @@
+{% extends "_layouts/cp" %}
+
+{% set fullPageForm = true %}
+{% set title = "Edit Meta Data" %}
+{% set pluginCpUrl = url('riometa') %}
+{% set currentSite = craft.app.sites.getSiteById(siteId) %}
+
+
+{% block contextMenu %}
+    {% include "riometa/sites-menu.twig" %}
+{% endblock %}
+
+{% set content %}
+    {% namespace namespace %}
+        {% include "riometa/meta-form.twig" %}
+    {% endnamespace %}
+{% endset %}
