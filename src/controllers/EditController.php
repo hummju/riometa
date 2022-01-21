@@ -16,10 +16,10 @@ use craft\helpers\UrlHelper;
 class EditController extends Controller
 {
 
-
-
     public function actionIndex()
     {
+
+        $this->requirePermission('editMetaData');
 
         $params = Craft::$app->urlManager->getRouteParams();
 
@@ -53,11 +53,7 @@ class EditController extends Controller
                     'meta_keywords' => 			$meta ? $meta->meta_keywords: "",
 
                     'og_type' => 				$meta ? $meta->og_type: "",
-                    'og_title' => 				$meta ? $meta->og_title: "",
-                    'og_url' => 				$meta ? $meta->og_url: "",
                     'og_image' => 				$meta ? $meta->og_image: "",
-                    'og_description' => 		$meta ? $meta->og_description: "",
-                    'og_locale' => 				$meta ? $meta->og_locale: "",
 
                     'geo_region' => 			$meta ? $meta->geo_region: "",
                     'geo_placename' => 			$meta ? $meta->geo_placename: "",
@@ -76,9 +72,10 @@ class EditController extends Controller
     public function actionSave()
     {
 
+        $this->requirePermission('editMetaData');
         $this->requirePostRequest();
-		$craft = \Craft::$app;
 
+		$craft = \Craft::$app;
 		$data = $craft->request->getRequiredBodyParam('data');
 
 		if (riometa::$plugin->metaservice->saveMeta($data))

@@ -116,15 +116,10 @@ class Install extends Migration
                     'meta_keywords' =>      $this->string(255),
 
                     'og_type' =>            $this->string(),
-                    'og_title' =>           $this->string(),
-                    'og_url' =>             $this->string(),
                     'og_image' =>           $this->string(),
-                    'og_description' =>     $this->string(),
-                    'og_locale' =>          $this->string(),
 
                     'geo_region' =>         $this->string(),
                     'geo_placename' =>      $this->string(),
-                    'geo_position' =>       $this->string(),
                     'geo_latitude' =>       $this->float(),
                     'geo_longitude' =>      $this->float(),
 
