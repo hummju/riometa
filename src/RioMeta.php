@@ -23,7 +23,7 @@ class RioMeta extends Plugin
     public static $plugin;
     public $hasCpSettings = false;
     public $hasCpSection = true;
-    public $schemaVersion = '0.1.0';
+    public $schemaVersion = '1.0.0';
 
     public function init()
     {
