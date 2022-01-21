@@ -21,7 +21,7 @@ class PublicController extends Controller
 
 
     public function actionIndex(){
-
+        
         $currentSite = Craft::$app->getSites()->currentSite;
 
         $info = RioMeta::$plugin->metaservice->serializeMeta( $currentSite->id );
