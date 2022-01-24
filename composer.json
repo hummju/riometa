@@ -1,7 +1,6 @@
 {
     "name": "riobasel/riometa",
     "description": "Plugin to edit meta data.",
-    "type": "craft-plugin",
     "version": "1.0.0",
     "keywords": [
         "craft",
