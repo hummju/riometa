@@ -7,6 +7,7 @@ use riobasel\riometa\RioMeta;
 use Craft;
 use craft\web\Controller;
 use craft\helpers\UrlHelper;
+use craft\helpers\App;
 
 
 
@@ -29,8 +30,8 @@ class PublicController extends Controller
             $info = [];
         }
 
-        $isDev = Craft::$app->env('ENVIRONMENT') === 'dev';
-        $FRONTEND_URL = Craft::$app->env('FRONTEND_URL');
+        $isDev = App::env('ENVIRONMENT') === 'dev';
+        $FRONTEND_URL = App::env('FRONTEND_URL');
 
         if($isDev){
           Craft::$app->getResponse()->getHeaders()->set( 'Access-Control-Allow-Origin', '*' );
