@@ -23,6 +23,7 @@
   },
   "extra": {
     "name": "Rio Meta",
-    "handle": "riometa"
+    "handle": "riometa",
+    "class": "riobasel\\riometa\\riometa"
   }
 }
