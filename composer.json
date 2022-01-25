@@ -11,7 +11,7 @@
     }
   ],
   "support": {
-    "source": "https://github.com/riobasel/riometa",
+    "source": "https://github.com/riobasel/riometa"
   },
   "require": {
     "craftcms/cms": "^3.7.0"
