@@ -1,41 +1,28 @@
 {
-    "name": "riobasel/riometa",
-    "description": "Plugin to edit meta data.",
-    "type": "craft-plugin",
-    "version": "1.0.0",
-    "keywords": [
-        "craft",
-        "cms",
-        "craftcms",
-        "craft-plugin",
-        "rio meta"
-    ],
-    "support": {
-        "docs": "???",
-        "issues": "???"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Julian ",
-            "homepage": "https://julianhumm.com"
-        }
-    ],
-    "require": {
-        "craftcms/cms": "^3.7"
-    },
-    "autoload": {
-        "psr-4": {
-          "riobasel\\riometa\\": "src/"
-        }
-    },
-    "extra": {
-        "name": "Meta Data",
-        "handle": "riometa",
-        "developer": "Julian ",
-        "developerUrl": "https://julianhumm.com",
-        "documentationUrl": "???",
-        "changelogUrl": "???",
-        "class": "riobasel\\riometa\\riometa"
+  "name": "riobasel/riometa",
+  "description": "Meta Data for Rio Sites",
+  "type": "craft-plugin",
+  "keywords": [],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Julian Humm",
+      "homepage": "https://julianhumm.com"
     }
+  ],
+  "support": {
+    "source": "https://github.com/riobasel/riometa",
+  },
+  "require": {
+    "craftcms/cms": "^3.7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "riobasel\\riometa\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Rio Meta",
+    "handle": "riometa"
+  }
 }
