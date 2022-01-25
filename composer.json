@@ -24,6 +24,6 @@
   "extra": {
     "name": "Rio Meta",
     "handle": "riometa",
-    "class": "riobasel\\riometa\\riometa"
+    "class": "riobasel\\riometa\\RioMeta"
   }
 }
