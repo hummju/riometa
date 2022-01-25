@@ -33,10 +33,10 @@ class PublicController extends Controller
         $isDev = App::env('ENVIRONMENT') === 'dev';
         $FRONTEND_URL = App::env('FRONTEND_URL');
 
-        Craft::$app->getResponse()->getHeaders()->set( 'Access-Control-Allow-Origin', $FRONTEND_URL );
+        Craft::$app->getResponse()->getHeaders()->add( 'Access-Control-Allow-Origin', $FRONTEND_URL );
         
         if($isDev){
-          # Craft::$app->getResponse()->getHeaders()->set( 'Access-Control-Allow-Origin', '*' );
+          Craft::$app->getResponse()->getHeaders()->add( 'Access-Control-Allow-Origin', '*' );
         }
 
 
