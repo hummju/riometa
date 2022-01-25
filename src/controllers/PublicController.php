@@ -21,13 +21,23 @@ class PublicController extends Controller
 
 
     public function actionIndex(){
-        
+
         $currentSite = Craft::$app->getSites()->currentSite;
 
         $info = RioMeta::$plugin->metaservice->serializeMeta( $currentSite->id );
         if( !$info ){
             $info = [];
         }
+
+        $isDev = Craft::$app->env('ENVIRONMENT') === 'dev';
+        $FRONTEND_URL = Craft::$app->env('FRONTEND_URL');
+
+        if($isDev){
+          Craft::$app->getResponse()->getHeaders()->set( 'Access-Control-Allow-Origin', '*' );
+        }else{
+          Craft::$app->getResponse()->getHeaders()->set( 'Access-Control-Allow-Origin', $FRONTEND_URL );
+        }
+
 
         return $this->asJson(
             [
