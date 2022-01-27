@@ -110,10 +110,10 @@ class MetaService extends Component
             if($record->geo_placename){
                 $result['geo_placename'] = $record->geo_placename;
             }
-            if($record->geo_position){
+            if($record->geo_latitude){
                 $result['geo_latitude'] = $record->geo_latitude;
             }
-            if($record->geo_position){
+            if($record->geo_longitude){
                 $result['geo_longitude'] = $record->geo_longitude;
             }
         }
