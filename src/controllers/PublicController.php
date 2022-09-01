@@ -36,7 +36,7 @@ class PublicController extends Controller
         if($isDev){
           Craft::$app->getResponse()->getHeaders()->add( 'Access-Control-Allow-Origin', '*' );
         }else{
-            Craft::$app->getResponse()->getHeaders()->add( 'Access-Control-Allow-Origin', $FRONTEND_URL );
+            Craft::$app->getResponse()->getHeaders()->add( 'Access-Control-Allow-Origin', '*' );
         }
 
 
